@@ -9,23 +9,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
-	<link rel="stylesheet" href="css/styles.min.css">
-	
+	<meta name="theme-color" content="#383939">
+	<link rel="stylesheet" href="css/styles.min.css?ver=20200211">
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(57422677, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
-	
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+		ym(57422677, "init", {
+				 clickmap:true,
+				 trackLinks:true,
+				 accurateTrackBounce:true
+		});
+	 </script>
+	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	 <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -75,6 +73,7 @@
 			<p class="info"> - Расчет нагрузки системы ГВС</p>
 			<p class="info"> - Добавление ФЗ 190 и ФЗ 261 в раздел "Выдержки из правил"</p>
 			<h3>Последние обновления:</h3>
+			<p class="info">11.02.2020г. Добавлены таблицы со значениями q и α в разделе "Укрупнённый расчет тепловой нагрузки системы отопления"</p>
 			<p class="info">06.02.2020г. Добавлен раздел "Коэффициент смешения элеваторного узла"</p>
 			<p class="info">04.02.2020г. Добавлен раздел "Полезные ссылки"</p>
 			<p class="info">03.02.2020г. Добавлена мобильная версия сайта</p>
@@ -104,10 +103,59 @@
 
 			<div class="thermal-power__infiltration__description">
 				<p>L – высота здания, м;</p>
-				<p>t<sub>во</sub> и t<sub>нро</sub> – внутренняя и наружная температура воздуха, C<sup>0</sup>;</p>
+				<p>t<sub>во</sub> – внутренняя температура воздуха, C° (Таблица 1);</p>
+				<p>t<sub>нро</sub> - наружная температура воздуха, C°;</p>
 				<p>g – ускорение свободного падения, м/с<sup>2</sup>;</p>
 				<p>W<sub>в</sub> – скорость ветра, м/с;</p>
 			</div><!-- /.thermal-power__infiltration__description -->
+
+			<div class="specheatcharacteristic__house__button showbtn">
+				<button class="specheatcharacteristic__house__button_add">Показать / скрыть таблицу 1</button>
+			</div><!-- /.specheatcharacteristic__house__button -->
+			<div class="thermal-power__infiltration__building-temperature table calctable">
+				<table border="1">
+					<tbody>
+					<tr>
+					<td>Наименование здания</td>
+					<td>Расчетная температура<br>воздуха в здании, °С</td>
+					</tr>
+					<tr>
+					<td>Жилое здание</td>
+					<td>18</td>
+					</tr>
+					<tr>
+					<td>Гостиница, общежитие, административное здание</td>
+					<td>18-20</td>
+					</tr>
+					<tr>
+					<td>Детский сад, ясли, поликлиника, амбулатория, диспансер, больница</td>
+					<td>20</td>
+					</tr>
+					<tr>
+					<td>Высшее, среднее специальное учебное заведение, школа, школа-интернат, предприятие общественного питания, клуб</td>
+					<td>16</td>
+					</tr>
+					<tr>
+					<td>Театр, магазин, пожарное депо</td>
+					<td>15</td>
+					</tr>
+					<tr>
+					<td>Кинотеатр</td>
+					<td>14</td>
+					</tr>
+					<tr>
+					<td>Гараж</td>
+					<td>10</td>
+					</tr>
+					<tr>
+					<td>Баня</td>
+					<td>25</td>
+					</tr>
+					</tbody>
+				</table>
+				<p class="info">Таблица 1. Расчетная температура воздуха в отапливаемых зданиях</p>
+			</div><!-- /.thermal-power__infiltration__building-temperature -->
+
 			<p class="info">Дробные значения вводятся через точку.</p>
 			<div class="thermal-power__infiltration__calc">
 				<input type="number" required id="buildingHeight" placeholder="L">
@@ -126,14 +174,520 @@
 			<p>$$Q=a*V*q_{o}*(t_{B}-t_{HPO})*(1+K)*10^{-6}$$</p>
 
 			<div class="thermal-power__thermal__description">
-				<p>α – коэффициент, призванный корректировать климатические условия. Берется в расчет, если уличная температура отличается от -30 С;</p>
+				<p>α – коэффициент, призванный корректировать климатические условия. Берется в расчет, если уличная температура отличается от -30 С°; (Таблица 2)</p>
 				<p>V – объем строения по наружным замерам;</p>
-				<p>q<sub>о</sub> – удельный отопительный показатель строения при заданной tн.р = -30 С, измеряется в Ккал/куб.м.*С;</p>
+				<p>q<sub>о</sub> – удельный отопительный показатель строения при заданной tн.р = -30 С°, измеряется в Ккал/куб.м.*С; (Таблица 3 и 4)</p>
 				<p>K – коэффициент инфильтрации.</p>
-
 			</div><!-- /.thermal-power__thermal__description -->
+
+			<div class="thermal-power__thermal__correction table">
+				<table border="2">
+					<tbody>
+					<tr>
+					<td>Расчетная<br>температура<br>наружного<br>воздуха °С</td>
+					<td>0</td>
+					<td>-5</td>
+					<td>-10</td>
+					<td>-15</td>
+					<td>-20</td>
+					<td>-25</td>
+					<td>-30</td>
+					</tr>
+					<tr>
+					<td>α</td>
+					<td>2,05</td>
+					<td>1,67</td>
+					<td>1,45</td>
+					<td>1,29</td>
+					<td>1,17</td>
+					<td>1,08</td>
+					<td>1,00</td>
+					</tr>
+					</tbody>
+				</table>
+				<p class="info">Таблица 2. Поправочный коэффициент для жилых зданий</p>
+			</div><!-- /.thermal-power__thermal__correction -->
+
+			<div class="specheatcharacteristic__house__button showbtn">
+				<button class="specheatcharacteristic__house__button_add">Показать / скрыть таблицу 3</button>
+			</div><!-- /.specheatcharacteristic__house__button -->
+			<div class="specheatcharacteristic__house calctable">
+				<table border="1">
+					<tbody>
+					<tr>
+					<td>Наружный<br>объем, V, м<sup>3</sup></td>
+					<td colspan="2">Удельная отопительная<br>хар-ка, q<sub>о</sub><br>год<br>постройки</td>
+					<td>Наружный<br>объем, V, м<sup>3</sup>
+					</td>
+					<td colspan="2">Удельная отопительная<br>хар-ка, q<sub>о</sub><br>год<br>постройки</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 1958</td>
+					<td>после 1958</td>
+					<td>
+					</td>
+					<td>до 1958</td>
+					<td>после 1958</td>
+					</tr>
+					<tr>
+					<td>100</td>
+					<td>0,74</td>
+					<td>0,92</td>
+					<td>4000</td>
+					<td>0,4</td>
+					<td>0,47</td>
+					</tr>
+					<tr>
+					<td>200</td>
+					<td>0,66</td>
+					<td>0,82</td>
+					<td>4500</td>
+					<td>0,39</td>
+					<td>0,46</td>
+					</tr>
+					<tr>
+					<td>300</td>
+					<td>0,62</td>
+					<td>0,78</td>
+					<td>5000</td>
+					<td>0,38</td>
+					<td>0,45</td>
+					</tr>
+					<tr>
+					<td>400</td>
+					<td>0,6</td>
+					<td>0,74</td>
+					<td>6000</td>
+					<td>0,37</td>
+					<td>0,43</td>
+					</tr>
+					<tr>
+					<td>500</td>
+					<td>0,58</td>
+					<td>0,71</td>
+					<td>7000</td>
+					<td>0,36</td>
+					<td>0,42</td>
+					</tr>
+					<tr>
+					<td>600</td>
+					<td>0,56</td>
+					<td>0,69</td>
+					<td>8000</td>
+					<td>0,35</td>
+					<td>0,41</td>
+					</tr>
+					<tr>
+					<td>700</td>
+					<td>0,54</td>
+					<td>0,68</td>
+					<td>9000</td>
+					<td>0,34</td>
+					<td>0,4</td>
+					</tr>
+					<tr>
+					<td>800</td>
+					<td>0,53</td>
+					<td>0,67</td>
+					<td>10000</td>
+					<td>0,33</td>
+					<td>0,39</td>
+					</tr>
+					<tr>
+					<td>900</td>
+					<td>0,52</td>
+					<td>0,66</td>
+					<td>11000</td>
+					<td>0,32</td>
+					<td>0,38</td>
+					</tr>
+					<tr>
+					<td>1000</td>
+					<td>0,51</td>
+					<td>0,65</td>
+					<td>12000</td>
+					<td>0,31</td>
+					<td>0,38</td>
+					</tr>
+					<tr>
+					<td>1100</td>
+					<td>0,5</td>
+					<td>0,62</td>
+					<td>13000</td>
+					<td>0,3</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>1200</td>
+					<td>0,49</td>
+					<td>0,6</td>
+					<td>14000</td>
+					<td>0,3</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>1300</td>
+					<td>0,48</td>
+					<td>0,59</td>
+					<td>15000</td>
+					<td>0,29</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>1400</td>
+					<td>0,47</td>
+					<td>0,58</td>
+					<td>20000</td>
+					<td>0,28</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>1500</td>
+					<td>0,47</td>
+					<td>0,57</td>
+					<td>25000</td>
+					<td>0,28</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>1700</td>
+					<td>0,46</td>
+					<td>0,55</td>
+					<td>30000</td>
+					<td>0,28</td>
+					<td>0,36</td>
+					</tr>
+					<tr>
+					<td>2000</td>
+					<td>0,45</td>
+					<td>0,53</td>
+					<td>35000</td>
+					<td>0,28</td>
+					<td>0,35</td>
+					</tr>
+					<tr>
+					<td>2500</td>
+					<td>0,44</td>
+					<td>0,52</td>
+					<td>40000</td>
+					<td>0,27</td>
+					<td>0,35</td>
+					</tr>
+					<tr>
+					<td>3000</td>
+					<td>0,43</td>
+					<td>0,5</td>
+					<td>45000</td>
+					<td>0,27</td>
+					<td>0,34</td>
+					</tr>
+					<tr>
+					<td>3500</td>
+					<td>0,42</td>
+					<td>0,48</td>
+					<td>50000</td>
+					<td>0,26</td>
+					<td>0,34</td>
+					</tr>
+					</tbody></table>
+					<p class="info">Таблица 3. Удельная отопительная характеристика жилых зданий</p>
+			</div><!-- /.specheatcharacteristic__house -->
+
+
+			<div class="specheatcharacteristic__admin__button showbtn">
+				<button class="specheatcharacteristic__admin__button_add">Показать / скрыть таблицу 4</button>
+			</div><!-- /.specheatcharacteristic__admin__button -->
+			<div class="specheatcharacteristic__house calctable">
+				<table border="1">
+					<tbody>
+					<tr>
+					<td>Наименование зданий</td>
+					<td>Наружный<br>объем, V, м<sup>3</sup></td>
+					<td>Удельная отопительная<br>хар-ка, q<sub>о</sub></td>
+					</tr>
+					<tr>
+					<td>Административные здания, конторы</td>
+					<td>до 5000</td>
+					<td>0,43</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,38</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 15000</td>
+					<td>0,35</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 15000</td>
+					<td>0,32</td>
+					</tr>
+					<tr>
+					<td>Клубы</td>
+					<td>до 5000</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,33</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,3</td>
+					</tr>
+					<tr>
+					<td>Кинотеатры</td>
+					<td>до 5000</td>
+					<td>0,36</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,32</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,3</td>
+					</tr>
+					<tr>
+					<td>Театры</td>
+					<td>до 10000</td>
+					<td>0,29</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 15000</td>
+					<td>0,27</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 20000</td>
+					<td>0,22</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 30000</td>
+					<td>0,2</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 30000</td>
+					<td>0,18</td>
+					</tr>
+					<tr>
+					<td>Магазины</td>
+					<td>до 5000</td>
+					<td>0,38</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,33</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,31</td>
+					</tr>
+					<tr>
+					<td>Детские сады и ясли</td>
+					<td>до 5000</td>
+					<td>0,38</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 5000</td>
+					<td>0,34</td>
+					</tr>
+					<tr>
+					<td>Школы и высшие учебные заведения</td>
+					<td>до 5000</td>
+					<td>0,39</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,35</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,33</td>
+					</tr>
+					<tr>
+					<td>Больницы</td>
+					<td>до 5000</td>
+					<td>0,4</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,36</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 15000</td>
+					<td>0,32</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 15000</td>
+					<td>0,3</td>
+					</tr>
+					<tr>
+					<td>Бани</td>
+					<td>до 5000</td>
+					<td>0,28</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,25</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,23</td>
+					</tr>
+					<tr>
+					<td>Прачечные</td>
+					<td>до 5000</td>
+					<td>0,38</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,33</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,31</td>
+					</tr>
+					<tr>
+					<td>Предприятия общественного питания,<br>столовые, фабрики-кухни</td>
+					<td>до 5000</td>
+					<td>0,35</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,33</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,3</td>
+					</tr>
+					<tr>
+					<td>Лаборатории</td>
+					<td>до 5000</td>
+					<td>0,37</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 10000</td>
+					<td>0,35</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 10000</td>
+					<td>0,33</td>
+					</tr>
+					<tr>
+					<td>Пожарные депо</td>
+					<td>до 2000</td>
+					<td>0,48</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 5000</td>
+					<td>0,46</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 5000</td>
+					<td>0,45</td>
+					</tr>
+					<tr>
+					<td>Гаражи</td>
+					<td>до 2000</td>
+					<td>0,7</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 3000</td>
+					<td>0,6</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>до 5000</td>
+					<td>0,55</td>
+					</tr>
+					<tr>
+					<td>
+					</td>
+					<td>более 5000</td>
+					<td>0,5</td>
+					</tr>
+					</tbody></table>
+					<p class="info">Таблица 4. Удельная тепловая характеристика административных,<br> лечебных и культурно-просветительных зданий, детских учреждений</p>
+			</div><!-- /.specheatcharacteristic__admin -->
+
 			<p class="info">Дробные значения вводятся через точку.</p>
+			<div class="thermal-power__thermal__volume">
+				<p class="info">Расчет строительного объема</p>
+				<input type="number" required id="builtUpArea" placeholder="Площадь">
+				<input type="number" required id="buildingHeightTherm" placeholder="Высота">
+			</div><!-- /.thermal-power__thermal__volume -->
+
+			<div class="thermal-power__thermal__btn">
+				<button class="btn" onclick="volume()">Вычислить</button>
+				<button class="btn" id="clearVolume">Очистить</button>
+			</div><!-- /.thermal-power__thermal__btn -->
+
 			<div class="thermal-power__thermal__calc">
+				<p class="info">Расчет нагрузки</p>
+				<input type="number" required id="correctionFactor" placeholder="α">
 				<input type="number" required id="buildingVolume" placeholder="V">
 				<input type="number" required id="specHeatCharacteristic" placeholder="q">
 				<input type="number" required id="buildingTemperatureTherm" placeholder="tв">
@@ -154,9 +708,9 @@
 		<p>$$U=\frac{t_{1}-t_{3}}{t_{3}-t_{2}}$$</p>
 		<div class="elevator__description">
 			<p>U - Коэффициент смешения;</p>
-			<p>t<sub>1</sub> - температура в подающем трубопроводе теплосети  (C<sup>0</sup>);</p>
-			<p>t<sub>2</sub> - температура в обратном трубопроводе (C<sup>0</sup>);</p>
-			<p>t<sub>3</sub> - температура в подающем трубопроводе системы отопления после смешения (C<sup>0</sup>);</p>
+			<p>t<sub>1</sub> - температура в подающем трубопроводе теплосети  (C°);</p>
+			<p>t<sub>2</sub> - температура в обратном трубопроводе (C°);</p>
+			<p>t<sub>3</sub> - температура в подающем трубопроводе системы отопления после смешения (C°);</p>
 
 		</div><!-- /.elevator__description -->
 
@@ -318,7 +872,7 @@
 	</footer>
 
 	<div class="returnToTop" title="return to top">&#10148;</div>
-	<script src="js/scripts.min.js"></script>
+	<script src="js/scripts.min.js?ver=20200211"></script>
 	<script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
