@@ -10,9 +10,9 @@
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
 	<meta name="theme-color" content="#383939">
-	<link rel="stylesheet" href="css/styles.min.css?ver=20200213">
+	<link rel="stylesheet" href="css/styles.min.css?ver=20200305">
 	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
+	<!-- <script type="text/javascript" >
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -22,7 +22,7 @@
 				 accurateTrackBounce:true
 		});
 	 </script>
-	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 	 <!-- /Yandex.Metrika counter -->
 </head>
 
@@ -41,6 +41,8 @@
 						<li class="main__menu__tab">Расчет погрешности УУТЭ</li>
 						<li class="main__menu__tab">Укрупнённый расчет тепловой нагрузки системы отопления</li>
 						<li class="main__menu__tab">Укрупнённый расчет тепловой нагрузки приточной вентиляции</li>
+						<!-- <li class="main__menu__tab">Средняя часовая тепловая нагрузка ГВС</li> -->
+						<li class="main__menu__tab">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</li>
 						<li class="main__menu__tab">Коэффициент смешения элеваторного узла</li>
 					</ul>
 				</li>
@@ -48,7 +50,8 @@
 				<li><a href="#" class="main__menu__tab">Полезные ссылки</a></li>
 			</ul>
 		</nav>
-	</section><!-- /.top-menu -->
+	</section>
+	<!-- /.top-menu -->
 
 	<section class="mobile__menu">
 		<div class="mobile__menu__btn">
@@ -59,6 +62,8 @@
 			<li class="mobile__menu__tab">Расчет погрешности УУТЭ</li>
 			<li class="mobile__menu__tab">Укрупнённый расчет тепловой нагрузки системы отопления</li>
 			<li class="mobile__menu__tab">Укрупнённый расчет тепловой нагрузки приточной вентиляции</li>
+			<!-- <li class="mobile__menu__tab">Средняя часовая тепловая нагрузка ГВС</li> -->
+			<li class="mobile__menu__tab">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</li>
 			<li class="mobile__menu__tab">Коэффициент смешения элеваторного узла</li>
 			<li class="mobile__menu__tab">Выдержки из правил</li>
 			<li class="mobile__menu__tab">Полезные ссылки</li>
@@ -74,6 +79,7 @@
 			<p class="info"> - Расчет нагрузки системы ГВС</p>
 			<p class="info"> - Добавление ФЗ 190 и ФЗ 261 в раздел "Выдержки из правил"</p>
 			<h3>Последние обновления:</h3>
+			<p class="info">05.03.2020г. Добавлен раздел "Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды"</p>
 			<p class="info">13.02.2020г. Добавлен раздел "Укрупнённый расчет тепловой нагрузки приточной вентиляции"</p>
 			<p class="info">11.02.2020г. Добавлены таблицы со значениями q и α в разделе "Укрупнённый расчет тепловой нагрузки системы отопления"</p>
 			<p class="info">06.02.2020г. Добавлен раздел "Коэффициент смешения элеваторного узла"</p>
@@ -1109,6 +1115,247 @@
 		</div><!-- /.elevator__btn -->
 	</section><!-- /.ventilation -->
 
+<!--
+	<!-- <scetion class="average-gvs tabcontent">
+		<h2 class="average-gvs__h2">Средняя часовая тепловая нагрузка ГВС</h2>
+		<div class="average-gvs__calc">
+
+		</div>
+		<!-- /.average-gvs__calc -->
+
+	<!-- </scetion> -->
+	<!-- /.average-gvs tabcontent -->
+
+
+	<section class="consumed-energy tabcontent">
+		<h2 class="consumed-energy__h2">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</h2>
+
+		<div class="consumed-energy__thermal">
+			<h3 class="consumed-energy__thermal__h3">Отопление, вентиляция и кондиционирование</h3>
+			<div class="reference-table">
+				<div class="outdoor-temperature-table table">
+					<table>
+						<tbody>
+							<tr>
+								<td></td>
+								<td>2014</td>
+								<td>2015</td>
+								<td>2016</td>
+								<td>2017</td>
+								<td>2018</td>
+								<td>2019</td>
+								<td>2020</td>
+							</tr>
+							<tr>
+								<td>Январь</td>
+								<td>-8,4</td>
+								<td>-4,4</td>
+								<td>-9,6</td>
+								<td>-7,4</td>
+								<td>-4,6</td>
+								<td>-6,8</td>
+								<td>-0,1</td>
+							</tr>
+							<tr>
+								<td>Февраль</td>
+								<td>-2,1</td>
+								<td>-2,2</td>
+								<td>-0,4</td>
+								<td>-4,3</td>
+								<td>-8,8</td>
+								<td>-1,6</td>
+								<td>-0,3</td>
+							</tr>
+							<tr>
+								<td>Март</td>
+								<td>3,0</td>
+								<td>2,2</td>
+								<td>0,8</td>
+								<td>2,7</td>
+								<td>-5,1</td>
+								<td>0,7</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Апрель</td>
+								<td>7,4</td>
+								<td>6,2</td>
+								<td>8,5</td>
+								<td>5,6</td>
+								<td>7,7</td>
+								<td>8,4</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Май</td>
+								<td>0,0</td>
+								<td>14,5</td>
+								<td>14,4</td>
+								<td>6,8	</td>
+								<td>16,5</td>
+								<td>10,7</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Сентябрь</td>
+								<td>9,3</td>
+								<td>14,5</td>
+								<td>8,7</td>
+								<td>7,1</td>
+								<td>7,5</td>
+								<td>7,1</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Октябрь</td>
+								<td>3,8</td>
+								<td>4,6</td>
+								<td>4,5</td>
+								<td>4,8</td>
+								<td>7,5</td>
+								<td>8,7</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Ноябрь</td>
+								<td>-1,4</td>
+								<td>1,0</td>
+								<td>-2,6</td>
+								<td>-0,2</td>
+								<td>-0,7</td>
+								<td>1,6</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Декабрь</td>
+								<td>-4,0</td>
+								<td>0,5</td>
+								<td>-4,5</td>
+								<td>-0,2</td>
+								<td>-5,8</td>
+								<td>0,6</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="info">Среднемесячная температура наружного воздуха</p>
+				</div><!-- /.outdoor-temperature-table -->
+			</div><!-- /.reference-table -->
+			<div class="reference-table">
+				<div class="building-temperature table">
+					<table>
+						<tbody>
+						<tr>
+						<td>Наименование здания</td>
+						<td>Расчетная температура<br>воздуха в здании, °С</td>
+						</tr>
+						<tr>
+						<td>Жилое здание</td>
+						<td>18</td>
+						</tr>
+						<tr>
+						<td>Гостиница, общежитие, административное здание</td>
+						<td>18-20</td>
+						</tr>
+						<tr>
+						<td>Детский сад, ясли, поликлиника, амбулатория, диспансер, больница</td>
+						<td>20</td>
+						</tr>
+						<tr>
+						<td>Высшее, среднее специальное учебное заведение, школа, школа-интернат, предприятие общественного питания, клуб</td>
+						<td>16</td>
+						</tr>
+						<tr>
+						<td>Театр, магазин, пожарное депо</td>
+						<td>15</td>
+						</tr>
+						<tr>
+						<td>Кинотеатр</td>
+						<td>14</td>
+						</tr>
+						<tr>
+						<td>Гараж</td>
+						<td>10</td>
+						</tr>
+						<tr>
+						<td>Баня</td>
+						<td>25</td>
+						</tr>
+						</tbody>
+					</table>
+					<p class="info">Расчетная температура воздуха в отапливаемых зданиях</p>
+				</div><!-- /.building-temperature -->
+			</div><!-- /.reference-table -->
+			<p>$$Q_{O}=q_{o}*\frac{t_{BH}-t_{HB}^{\phi}}{t_{BH}-t_{HB}^{p}}*T$$</p>
+			<div class="consumed-energy__thermal__description">
+				<p>q<sub>o</sub> - значение тепловой нагрузки, Гкал/час;</p>
+				<p>t<sub>вн</sub> - расчетная температура воздуха в отапливаемых помещениях, C°;</p>
+				<p>t<sup>ф</sup><sub>нв</sub> - фактическая среднесуточная температура наружного воздуха за расчетный период, C°;</p>
+				<p>t<sup>р</sup><sub>нв</sub> - расчетная температура наружного воздуха, C°;</p>
+				<p>T - время работы тепловой энергоустановки в расчетном периоде, час;</p>
+			</div><!-- /.consumed-energy__thermal__description -->
+
+			<div class="consumed-energy__thermal__calc">
+				<p class="infotext">Дробные значения вводятся через точку.</p>
+				<input type="number" required id="heatLoadCeThermal" placeholder="q">
+				<input type="number" required id="buildTempCeThermal" placeholder="tвн">
+				<input type="number" required id="outdoorTempCalc" placeholder="tнвр">
+				<input type="number" required id="outdoorTempFact" placeholder="tнвф">
+				<input type="number" required id="workingHoursCeThermal" placeholder="Т">
+			</div><!-- /.consumed-energy__thermal__calc -->
+			<div class="consumed-energy__thermal__btn">
+				<button class="btn" onclick="consumedtherm()">Вычислить</button>
+				<button class="btn" id="clearConsumedTherm">Очистить</button>
+			</div><!-- /.consumed-energy__thermal__btn -->
+			<div class="output" id="consumedTherm"></div>
+		</div><!-- /.consumed-energy__thermal -->
+
+		<div class="consumed-energy__gvs">
+			<h3 class="consumed-energy__gvs__h3">ГВС</h3>
+			<p>$$Q_{гвс}=q_{гвс}*T*\frac{t_{гв}^{пр}-t_{хв}^{\phi}}{t_{гв}^{пр}-t_{хв}^{пр}}$$</p>
+			<div class="consumed-energy__gvs__description">
+				<p>q<sub>гвс</sub> - значение тепловой нагрузки, Гкал/час;</p>
+				<p>t<sup>ф</sup><sub>хв</sub> - фактическая температура холодной воды (при отсутствии данных принимается +5 C° в отопительный период и +15 C° в неотопительный период), C°;</p>
+				<p>t<sup>пр</sup><sub>хв</sub> - фактическая температура холодной воды в отопительный период (при отсутствии данных принимается +5 C°), C°;</p>
+				<p>t<sup>пр</sup><sub>гв</sub> - проектная температура горячей воды принимается равной 60 C°;</p>
+				<p>T - время работы ГВС в расчетном периоде, час;</p>
+			</div><!-- /.consumed-energy__gvs__description -->
+			<div class="consumed-energy__gvs__calc">
+				<p class="infotext">Дробные значения вводятся через точку.</p>
+				<input type="number" required id="heatLoadCeGvs" placeholder="q">
+				<input type="number" required id="coldWaterTempFact" placeholder="tхвф">
+				<input type="number" required id="coldWaterTempCalc" placeholder="tхвпр">
+				<input type="number" required id="hotWaterTempCalc" placeholder="tгвпр">
+				<input type="number" required id="workingHoursCeGvs" placeholder="Т">
+			</div><!-- /.consumed-energy__gvs__calc -->
+			<div class="consumed-energy__gvs__btn">
+				<button class="btn" onclick="consumedgvs()">Вычислить</button>
+				<button class="btn" id="clearConsumedGvs">Очистить</button>
+			</div><!-- /.consumed-energy__gvs__btn -->
+			<div class="output" id="consumedgvs"></div>
+		</div><!-- /.consumed-energy__gvs -->
+
+		<div class="consumed-energy__teсh">
+			<h3 class="consumed-energy__teсh__h3">Технологические нужды</h3>
+			<p>$$Q_{тех}=q_{тех}*T$$</p>
+			<div class="consumed-energy__teсh__description">
+				<p>q<sub>тех</sub> - значение тепловой нагрузки, Гкал/час;</p>
+				<p>T - время работы тепловой энергоустановки в расчетном периоде, час;</p>
+			</div><!-- /.consumed-energy__teсh__description -->
+			<div class="consumed-energy__teсh__calc">
+				<p class="infotext">Дробные значения вводятся через точку.</p>
+				<input type="number" required id="heatLoadCeTeсh" placeholder="q">
+				<input type="number" required id="workingHoursCeTech" placeholder="Т">
+			</div><!-- /.consumed-energy__teсh__calc -->
+			<div class="consumed-energy__teсh__btn">
+				<button class="btn" onclick="consumedteсh()">Вычислить</button>
+				<button class="btn" id="clearConsumedTeсh">Очистить</button>
+			</div><!-- /.consumed-energy__teсh__btn -->
+			<div class="output" id="consumedteсh"></div>
+		</div><!-- /.consumed-energy__teсh -->
+
+	</section><!-- /.consumed-energy tabcontent -->
+
 	<section class="elevator tabcontent">
 		<h2 class="elevator__h2">Коэффициент смешения элеваторного узла</h2>
 		<p>$$U=\frac{t_{1}-t_{3}}{t_{3}-t_{2}}$$</p>
@@ -1276,7 +1523,7 @@
 	</footer>
 
 	<div class="returnToTop" title="return to top">&#10148;</div>
-	<script src="js/scripts.min.js?ver=20200213"></script>
+	<script src="js/scripts.min.js?ver=20200305"></script>
 	<script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
