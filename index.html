@@ -10,9 +10,9 @@
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
 	<meta name="theme-color" content="#383939">
-	<link rel="stylesheet" href="css/styles.min.css?ver=20200318v2">
+	<link rel="stylesheet" href="css/styles.min.css?ver=20200401">
 	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
+	<!-- <script type="text/javascript" >
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -22,7 +22,7 @@
 				 accurateTrackBounce:true
 		});
 	 </script>
-	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 	 <!-- /Yandex.Metrika counter -->
 </head>
 
@@ -79,13 +79,13 @@
 			<p class="info"> - Расчет нагрузки системы ГВС по дополнительным данным</p>
 			<p class="info"> - Добавление ФЗ 190 и ФЗ 261 в раздел "Выдержки из правил"</p>
 			<h3>Последние обновления:</h3>
+			<p class="info">01.04.2020 - Оптимизирован код. Увеличина скорость работы сайта</p>
+			<p class="info">01.04.2020 - Добавлена ссылка на портал ГИС ЖКХ в разделе "Полезные ссылки"</p>
 			<p class="info">18.03.2020 - Добавлен раздел "Средняя часовая тепловая нагрузка ГВС"</p>
 			<p class="info">05.03.2020 - Добавлен раздел "Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды"</p>
 			<p class="info">13.02.2020 - Добавлен раздел "Укрупнённый расчет тепловой нагрузки приточной вентиляции"</p>
 			<p class="info">11.02.2020 - Добавлены таблицы со значениями q и α в разделе "Укрупнённый расчет тепловой нагрузки системы отопления"</p>
-			<p class="info">06.02.2020 -  Добавлен раздел "Коэффициент смешения элеваторного узла"</p>
-			<p class="info">04.02.2020 - Добавлен раздел "Полезные ссылки"</p>
-			<p class="info">03.02.2020 - Добавлена мобильная версия сайта</p>
+			<p class="info">06.02.2020 - Добавлен раздел "Коэффициент смешения элеваторного узла"</p>
 		</div><!-- /.main-page__text -->
 	</section><!-- /.main-page -->
 
@@ -115,7 +115,7 @@
 			<div class="thermal-power__infiltration__description">
 				<p>L – высота здания, м;</p>
 				<p>t<sub>во</sub> – внутренняя температура воздуха, C° (Таблица 1);</p>
-				<p>t<sub>нро</sub> - наружная температура воздуха, C°;</p>
+				<p>t<sub>нро</sub> – наружная температура воздуха, C°;</p>
 				<p>g – ускорение свободного падения, м/с<sup>2</sup>;</p>
 				<p>W<sub>в</sub> – скорость ветра, м/с;</p>
 			</div><!-- /.thermal-power__infiltration__description -->
@@ -173,7 +173,7 @@
 				<p class="infotext">Дробные значения вводятся через точку.</p>
 				<input type="number" required id="buildingHeight" placeholder="L">
 				<input type="number" required id="buildingTemperature" placeholder="tв">
-				<input type="number" required id="outdoorTemperature" placeholder="tнво">
+				<input type="number" required id="outdoorTemperature" placeholder="tнро">
 				<input type="number" required id="windSpeed" placeholder="Wв">
 			</div><!-- /.thermal-power__infiltration__calc -->
 			<div class="thermal-power__infiltration__btn">
@@ -709,7 +709,7 @@
 				<input type="number" required id="buildingVolume" placeholder="V">
 				<input type="number" required id="specHeatCharacteristic" placeholder="q">
 				<input type="number" required id="buildingTemperatureTherm" placeholder="tв">
-				<input type="number" required id="outdoorTemperatureTherm" placeholder="tнво">
+				<input type="number" required id="outdoorTemperatureTherm" placeholder="tнро">
 				<input type="number" required id="infiltrationTherm" placeholder="K">
 			</div><!-- /.thermal-power__thermal__calc -->
 
@@ -1539,31 +1539,33 @@
 	<section class="useful-links tabcontent">
 		<h2 class="useful-links__h2">Полезные ссылки</h2>
 		<div class="useful-links__website">
-			<a href="https://pkk5.rosreestr.ru/" rel="nofollow" target="_blank">Публичная кадастровая карта</a>
+			<a href="https://pkk5.rosreestr.ru/" rel="noreferrer nofollow noopener" target="_blank">Публичная кадастровая карта</a>
 
-			<a href="https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn" rel="nofollow" target="_blank">ЕГРП</a>
+			<a href="https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn" rel="noreferrer nofollow noopener" target="_blank">ЕГРП</a>
 
-			<a href="https://www.rusprofile.ru/" rel="nofollow" target="_blank">«Rusprofile» — Бесплатный справочник юридических лиц и индивидуальных предпринимателей</a>
+			<a href="https://www.rusprofile.ru/" rel="noreferrer nofollow noopener" target="_blank">«Rusprofile» — Бесплатный справочник юридических лиц и индивидуальных предпринимателей</a>
 
-			<a href="https://www.reformagkh.ru/myhouse" rel="nofollow" target="_blank">Реформа ЖКХ</a>
+			<a href="https://www.reformagkh.ru/myhouse" rel="noreferrer nofollow noopener" target="_blank">Реформа ЖКХ</a>
 
-			<a href="https://dom.mos.ru/" rel="nofollow" target="_blank">Вся информация о доме и его обслуживании</a>
+			<a href="https://dom.gosuslugi.ru/" rel="noreferrer nofollow noopener" target="_blank">ГИС ЖКХ</a>
 
-			<a href="https://www.moscowmap.ru/" rel="nofollow" target="_blank">Интерактивные карты Москвы. Информация о строениях</a>
+			<a href="https://dom.mos.ru/" rel="noreferrer nofollow noopener" target="_blank">Вся информация о доме и его обслуживании</a>
 
-			<a href="https://www.pochta.ru/" rel="nofollow" target="_blank">Почта России</a>
+			<a href="https://www.moscowmap.ru/" rel="noreferrer nofollow noopener" target="_blank">Интерактивные карты Москвы. Информация о строениях</a>
 
-			<a href="https://stroi.mos.ru/stroitelstvo-v-okrugah-raionah" rel="nofollow" target="_blank">Строительство в округах, районах</a>
+			<a href="https://www.pochta.ru/" rel="noreferrer nofollow noopener" target="_blank">Почта России</a>
 
-			<a href="https://stroi.mos.ru/construction" rel="nofollow" target="_blank">Интерактивная карта «Все стройки Москвы»</a>
+			<a href="https://stroi.mos.ru/stroitelstvo-v-okrugah-raionah" rel="noreferrer nofollow noopener" target="_blank">Строительство в округах, районах</a>
 
-			<a href="https://www.mos.ru/stroinadzor/documents/razresheniia-na-stroitelstvo/" rel="nofollow" target="_blank">Разрешения на строительство</a>
+			<a href="https://stroi.mos.ru/construction" rel="noreferrer nofollow noopener" target="_blank">Интерактивная карта «Все стройки Москвы»</a>
 
-			<a href="https://data.mos.ru/opendata/7705031674-nejilye-pomeshcheniya-na-kotorye-zaregistrirovano-pravo-sobstvennosti-goroda-moskvy" rel="nofollow" target="_blank">Нежилые помещения, зарегистрированные в собственность города Москвы</a>
+			<a href="https://www.mos.ru/stroinadzor/documents/razresheniia-na-stroitelstvo/" rel="noreferrer nofollow noopener" target="_blank">Разрешения на строительство</a>
 
-			<a href="https://www.mos.ru/dgi/documents/perechen-gosudarstvennogo-imushchestva-prednaznachennogo-dlia-peredachi-vo-vladenie-iili-v-polzovanie/" rel="nofollow" target="_blank">Перечень государственного имущества, предназначенного для передачи во владение и/или в пользование субъектами малого и среднего предпринимательства</a>
+			<a href="https://data.mos.ru/opendata/7705031674-nejilye-pomeshcheniya-na-kotorye-zaregistrirovano-pravo-sobstvennosti-goroda-moskvy" rel="noreferrer nofollow noopener" target="_blank">Нежилые помещения, зарегистрированные в собственность города Москвы</a>
 
-			<a href="http://kad.arbitr.ru/" rel="nofollow" target="_blank">Картотека арбитражных дел</a>
+			<a href="https://www.mos.ru/dgi/documents/perechen-gosudarstvennogo-imushchestva-prednaznachennogo-dlia-peredachi-vo-vladenie-iili-v-polzovanie/" rel="noreferrer nofollow noopener" target="_blank">Перечень государственного имущества, предназначенного для передачи во владение и/или в пользование субъектами малого и среднего предпринимательства</a>
+
+			<a href="http://kad.arbitr.ru/" rel="noreferrer nofollow noopener" target="_blank">Картотека арбитражных дел</a>
 
 		</div><!-- /.useful-links__website -->
 	</section><!-- /.useful-links -->
@@ -1574,7 +1576,7 @@
 	</footer>
 
 	<div class="returnToTop" title="Наверх">&#10148;</div>
-	<script src="js/scripts.min.js?ver=20200318"></script>
+	<script src="js/scripts.min.js?ver=20200401"></script>
 	<script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
