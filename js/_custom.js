@@ -379,26 +379,28 @@ function elevator() {
 // Расчет тепловых потерь
 
 function heatLoss() {
-	let powerLoss     = document.querySelector("#powerLoss"),
-			lossOneOutput = document.querySelector("#lossOneOutput"),
-			lossSixOutput = document.querySelector("#lossSixOutput"),
+	let powerLoss          = document.querySelector("#powerLoss"),
+			lossOneOutput      = document.querySelector("#lossOneOutput"),
+			lossSixOutput      = document.querySelector("#lossSixOutput"),
 			powerLossSevenFull = +powerLoss.value / 7,
 			lossSevenRound     = Math.round(powerLossSevenFull * 1000) / 1000,
 			lossSixFull        = lossSevenRound * 6,
 			lossSixRound       = Math.round(lossSixFull * 1000) / 1000,
 			lossOneFull        = +powerLoss.value - lossSixRound,
 			lossOneRound       = Math.round(lossOneFull * 1000) / 1000;
+			lossOneSameFull    = lossSixRound / 6,
+			lossOneSameRound   = Math.round(lossOneSameFull * 1000) / 1000;
 
 	if (powerLoss.value == "") {
 		lossOneOutput.innerHTML = ("Данные не введены или введены не корректно.");
 	} else {
-		lossOneOutput.innerHTML = ("Потери за 1 месяц: " + (lossOneRound));
+		lossOneOutput.innerHTML = ("Потери в седьмой месяц: " + (lossOneRound));
 	}
 
 	if (powerLoss.value == "") {
 		lossSixOutput.innerHTML = ("Данные не введены или введены не корректно.");
 	} else {
-		lossSixOutput.innerHTML = ("Распределение на 6 месяцев: " + (lossSixRound));
+		lossSixOutput.innerHTML = ("Потери в остальные шесть месяцев: " + (lossOneSameRound));
 	}
 	clearHeatLoss.onclick = function(e) {
 		powerLoss.value = "";
