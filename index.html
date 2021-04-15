@@ -10,9 +10,9 @@
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
 	<meta name="theme-color" content="#383939">
-	<link rel="stylesheet" href="css/styles.min.css?ver=20210412">
+	<link rel="stylesheet" href="css/styles.min.css?ver=20210415">
 	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
+	<!-- <script type="text/javascript" >
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -22,7 +22,7 @@
 				 accurateTrackBounce:true
 		});
 	 </script>
-	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 	 <!-- /Yandex.Metrika counter -->
 </head>
 
@@ -44,6 +44,7 @@
 						<li class="main__menu__tab">Средняя часовая тепловая нагрузка ГВС</li>
 						<li class="main__menu__tab">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</li>
 						<li class="main__menu__tab">Коэффициент смешения элеваторного узла</li>
+						<li class="main__menu__tab">Расчет потреть тепловой энергии</li>
 					</ul>
 				</li>
 				<li><a href="#">Выдержки из правил &#9776;</a>
@@ -73,6 +74,7 @@
 			<li class="mobile__menu__tab">Средняя часовая тепловая нагрузка ГВС</li>
 			<li class="mobile__menu__tab">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</li>
 			<li class="mobile__menu__tab">Коэффициент смешения элеваторного узла</li>
+			<li class="mobile__menu__tab">Расчет потреть тепловой энергии</li>
 			<li class="mobile__menu__tab">ПП РФ № 1034 "О коммерческом учете тепловой энергии, теплоносителя"</li>
 			<li class="mobile__menu__tab">Приказ Минэнерго РФ N 115 "ПТЭТЭ"</li>
 			<li class="mobile__menu__tab">ПП РФ № 808. Организация теплоснабжения</li>
@@ -1442,8 +1444,23 @@
 
 	</section><!-- /.elevator -->
 
-	<section class="pku tabcontent" id="pku">
+	<section class="heat-loss tabcontent">
+		<h2 class="heat-loss__h2">Расчет потреть тепловой энергии</h2>
 
+		<div class="heat-loss__wrap">
+			<p class="infotext">Дробные значения вводятся через точку.</p>
+			<input type="number" required id="powerLoss" placeholder="Общая нагрузка">
+		</div><!-- /.heat-loss__wrap -->
+			<div class="output" id="lossOneOutput"></div>
+			<div class="output" id="lossSixOutput"></div>
+		<div class="heat-loss__btn">
+			<button class="btn" onclick="heatLoss()">Вычислить</button>
+			<button class="btn" id="clearHeatLoss">Очистить</button>
+		</div><!-- /.heat-loss__btn -->
+
+	</section><!-- /.heat-loss -->
+
+	<section class="pku tabcontent" id="pku">
 		<h2 class="pku__h2">Постановление Правительства РФ от 18 ноября 2013 г. № 1034 "О коммерческом учете тепловой энергии, теплоносителя"</h2>
 		<a href="https://base.garant.ru/70511954/" rel="nofollow" target="_blank">Ссылка на документ</a>
 
@@ -1664,7 +1681,7 @@
 	</footer>
 
 	<div class="returnToTop" title="Наверх">&#10148;</div>
-	<script src="js/scripts.min.js?ver=20210412"></script>
+	<script src="js/scripts.min.js?ver=20210415"></script>
 	<script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
