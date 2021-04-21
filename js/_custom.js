@@ -409,8 +409,92 @@ function heatLoss() {
 	};
 }
 
-
 // Расчет тепловых потерь
+
+function heatSeparation() {
+	let heatSeparationMain   = document.querySelector("#heatSeparationMain"),
+			sqrSeparationMain    = document.querySelector("#sqrSeparationMain"),
+			sqrSeparationOne     = document.querySelector("#sqrSeparationOne"),
+			sqrOutputOne         = document.querySelector("#sqrOutputOne"),
+			sqrSeparationTwo     = document.querySelector("#sqrSeparationTwo"),
+			sqrOutputTwo         = document.querySelector("#sqrOutputTwo"),
+			sqrSeparationThree   = document.querySelector("#sqrSeparationThree"),
+			sqrOutputThree       = document.querySelector("#sqrOutputThree"),
+			sqrSeparationFour    = document.querySelector("#sqrSeparationFour"),
+			sqrOutputFour        = document.querySelector("#sqrOutputFour"),
+			sqrSeparationFive    = document.querySelector("#sqrSeparationFive"),
+			sqrOutputFive        = document.querySelector("#sqrOutputFive"),
+			sqrSeparationSix     = document.querySelector("#sqrSeparationSix"),
+			sqrOutputSix         = document.querySelector("#sqrOutputSix"),
+			separationMainOutput = document.querySelector("#separationMainOutput"),
+
+			sqrSeparationOneCalc = Math.round(((+sqrSeparationOne.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+
+			sqrSeparationTwoCalc = Math.round(((+sqrSeparationTwo.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+
+			sqrSeparationThreeCalc = Math.round(((+sqrSeparationThree.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+
+			sqrSeparationFourCalc = Math.round(((+sqrSeparationFour.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+
+			sqrSeparationFiveCalc = Math.round(((+sqrSeparationFive.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+
+			sqrSeparationSixCalc = Math.round(((+sqrSeparationSix.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+
+			heatMainResidue = Math.round((heatSeparationMain.value - sqrSeparationOneCalc - sqrSeparationTwoCalc - sqrSeparationThreeCalc - sqrSeparationFourCalc - sqrSeparationFiveCalc - sqrSeparationSixCalc) * 10000000000) / 10000000000;
+
+			sqrMainResidue = +sqrSeparationMain.value - +sqrSeparationOne.value - +sqrSeparationTwo.value - +sqrSeparationThree.value - +sqrSeparationFour.value - +sqrSeparationFive.value - +sqrSeparationSix.value;
+
+			sqrOutputOne.innerHTML   = sqrSeparationOneCalc;
+			sqrOutputTwo.innerHTML   = sqrSeparationTwoCalc;
+			sqrOutputThree.innerHTML = sqrSeparationThreeCalc;
+			sqrOutputFour.innerHTML  = sqrSeparationFourCalc;
+			sqrOutputFive.innerHTML  = sqrSeparationFiveCalc;
+			sqrOutputSix.innerHTML   = sqrSeparationSixCalc;
+
+	if (heatSeparationMain.value == "" || sqrSeparationMain.value == "") {
+		separationMainOutput.innerHTML = ("Данные не введены или введены не корректно.");
+
+		sqrOutputOne.innerHTML   = ("Нет данных");
+		sqrOutputTwo.innerHTML   = ("Нет данных");
+		sqrOutputThree.innerHTML = ("Нет данных");
+		sqrOutputFour.innerHTML  = ("Нет данных");
+		sqrOutputFive.innerHTML  = ("Нет данных");
+		sqrOutputSix.innerHTML   = ("Нет данных");
+	} else {
+		separationMainOutput.innerHTML = ("Оставшаяся нагрузка: " + (heatMainResidue) + " Оставшаяся площадь: " + (sqrMainResidue));
+
+		sqrOutputOne.innerHTML   = sqrSeparationOneCalc;
+		sqrOutputTwo.innerHTML   = sqrSeparationTwoCalc;
+		sqrOutputThree.innerHTML = sqrSeparationThreeCalc;
+		sqrOutputFour.innerHTML  = sqrSeparationFourCalc;
+		sqrOutputFive.innerHTML  = sqrSeparationFiveCalc;
+		sqrOutputSix.innerHTML   = sqrSeparationSixCalc;
+	}
+	clearheatSeparation.onclick = function(e) {
+		heatSeparationMain.value = "";
+		sqrSeparationMain.value = "";
+		sqrSeparationOne.value = "";
+		sqrSeparationTwo.value = "";
+		sqrSeparationThree.value = "";
+		sqrSeparationFour.value = "";
+		sqrSeparationFive.value = "";
+		sqrOutputOne.innerHTML = "";
+		sqrOutputTwo.innerHTML = "";
+		sqrOutputThree.innerHTML = "";
+		sqrOutputFour.innerHTML = "";
+		sqrOutputFive.innerHTML = "";
+		sqrOutputSix.innerHTML = "";
+		separationMainOutput.innerHTML = "";
+	};
+
+}
+
+// Разделение тепловой нагрузки
+
+
+
+
+// Разделение тепловой нагрузки
 
 // returnetotop
 window.addEventListener("DOMContentLoaded", function() {

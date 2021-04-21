@@ -10,9 +10,9 @@
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
 	<meta name="theme-color" content="#383939">
-	<link rel="stylesheet" href="css/styles.min.css?ver=20210421">
+	<link rel="stylesheet" href="css/styles.min.css?ver=20210421v2">
 	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
+	<!-- <script type="text/javascript" >
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -22,7 +22,7 @@
 				 accurateTrackBounce:true
 		});
 	 </script>
-	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	 <noscript><div><img src="https://mc.yandex.ru/watch/57422677" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 	 <!-- /Yandex.Metrika counter -->
 </head>
 
@@ -45,6 +45,7 @@
 						<li class="main__menu__tab">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</li>
 						<li class="main__menu__tab">Коэффициент смешения элеваторного узла</li>
 						<li class="main__menu__tab">Расчет потерь тепловой энергии</li>
+						<li class="main__menu__tab">Разделение тепловой нагрузки</li>
 					</ul>
 				</li>
 				<li><a href="#">Выдержки из правил &#9776;</a>
@@ -76,6 +77,7 @@
 			<li class="mobile__menu__tab">Количество принятой тепловой энергии: отопление, вентиляция, кондиционирование, ГВС и технологические нужды</li>
 			<li class="mobile__menu__tab">Коэффициент смешения элеваторного узла</li>
 			<li class="mobile__menu__tab">Расчет потерь тепловой энергии</li>
+			<li class="mobile__menu__tab">Разделение тепловой нагрузки</li>
 			<li class="mobile__menu__tab">ПП РФ № 776 Правила организации коммерческого учета воды, сточных вод"</li>
 			<li class="mobile__menu__tab">ПП РФ № 808 Организация теплоснабжения</li>
 			<li class="mobile__menu__tab">ПП РФ № 1034 "О коммерческом учете тепловой энергии, теплоносителя"</li>
@@ -1462,6 +1464,56 @@
 
 	</section><!-- /.heat-loss -->
 
+	<section class="heat-separation tabcontent">
+		<h2 class="heat-loss__h2">Разделение тепловой нагрузки</h2>
+
+		<div class="heat-separation__wrap">
+			<h4>Вводные данные</h4>
+			<p class="infotext">Дробные значения вводятся через точку.</p>
+			<input type="number" required id="heatSeparationMain" placeholder="Общая нагрузка">
+			<input type="number" required id="sqrSeparationMain" placeholder="Общая площадь">
+		</div><!-- /.heat-separation__wrap -->
+		<div class="heat-separation__rooms">
+			<h4>Отделяемые площади</h4>
+			<div class="heat-separation__rooms-sqr">
+				<p class="heat-separation__rooms-sqr-p">Потребитель № 1</p>
+				<input type="number" required id="sqrSeparationOne" placeholder="Площадь">
+				<div class="output-sqr" id="sqrOutputOne"></div>
+			</div><!-- /.heat-separation__rooms-sqr -->
+			<div class="heat-separation__rooms-sqr">
+				<p class="heat-separation__rooms-sqr-p">Потребитель № 2</p>
+				<input type="number" required id="sqrSeparationTwo" placeholder="Площадь">
+				<div class="output-sqr" id="sqrOutputTwo"></div>
+			</div><!-- /.heat-separation__rooms-sqr -->
+			<div class="heat-separation__rooms-sqr">
+				<p class="heat-separation__rooms-sqr-p">Потребитель № 3</p>
+				<input type="number" required id="sqrSeparationThree" placeholder="Площадь">
+				<div class="output-sqr" id="sqrOutputThree"></div>
+			</div><!-- /.heat-separation__rooms-sqr -->
+			<div class="heat-separation__rooms-sqr">
+				<p class="heat-separation__rooms-sqr-p">Потребитель № 4</p>
+				<input type="number" required id="sqrSeparationFour" placeholder="Площадь">
+				<div class="output-sqr" id="sqrOutputFour"></div>
+			</div><!-- /.heat-separation__rooms-sqr -->
+			<div class="heat-separation__rooms-sqr">
+				<p class="heat-separation__rooms-sqr-p">Потребитель № 5</p>
+				<input type="number" required id="sqrSeparationFive" placeholder="Площадь">
+				<div class="output-sqr" id="sqrOutputFive"></div>
+			</div><!-- /.heat-separation__rooms-sqr -->
+			<div class="heat-separation__rooms-sqr">
+				<p class="heat-separation__rooms-sqr-p">Потребитель № 6</p>
+				<input type="number" required id="sqrSeparationSix" placeholder="Площадь">
+				<div class="output-sqr" id="sqrOutputSix"></div>
+			</div><!-- /.heat-separation__rooms-sqr -->
+		</div><!-- /.heat-separation__rooms -->
+		<div class="output" id="separationMainOutput"></div>
+		<div class="heat-separation__btn">
+			<button class="btn" onclick="heatSeparation()">Вычислить</button>
+			<button class="btn" id="clearheatSeparation">Очистить</button>
+		</div><!-- /.heat-separation__btn -->
+
+	</section><!-- /.heat-separation -->
+
 	<section class="pp776 tabcontent" id="pp776">
 		<h2 class="regulations__laws__h2">Постановление Правительства РФ от 4 сентября 2013 г. N 776 "Об утверждении Правил организации коммерческого учета воды, сточных вод"</h2>
 		<a href="http://base.garant.ru/70447322/" rel="nofollow" target="_blank">Ссылка на документ</a>
@@ -1767,7 +1819,7 @@
 	</footer>
 
 	<div class="returnToTop" title="Наверх">&#10148;</div>
-	<script src="js/scripts.min.js?ver=20210421"></script>
+	<script src="js/scripts.min.js?ver=20210421v2"></script>
 	<script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
