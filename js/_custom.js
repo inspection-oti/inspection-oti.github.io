@@ -408,9 +408,8 @@ function heatLoss() {
 		lossSixOutput.innerHTML = "";
 	};
 }
-
 // Расчет тепловых потерь
-
+// Разделение тепловой нагрузки
 function heatSeparation() {
 	let heatSeparationMain   = document.querySelector("#heatSeparationMain"),
 			sqrSeparationMain    = document.querySelector("#sqrSeparationMain"),
@@ -428,38 +427,31 @@ function heatSeparation() {
 			sqrOutputSix         = document.querySelector("#sqrOutputSix"),
 			separationMainOutput = document.querySelector("#separationMainOutput"),
 
-			sqrSeparationOneCalc = Math.round(((+sqrSeparationOne.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+			sqrSeparationOneCalc = Math.round(((+sqrSeparationOne.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000,
 
-			sqrSeparationTwoCalc = Math.round(((+sqrSeparationTwo.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+			sqrSeparationTwoCalc = Math.round(((+sqrSeparationTwo.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000,
 
-			sqrSeparationThreeCalc = Math.round(((+sqrSeparationThree.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+			sqrSeparationThreeCalc = Math.round(((+sqrSeparationThree.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000,
 
-			sqrSeparationFourCalc = Math.round(((+sqrSeparationFour.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+			sqrSeparationFourCalc = Math.round(((+sqrSeparationFour.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000,
 
-			sqrSeparationFiveCalc = Math.round(((+sqrSeparationFive.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
+			sqrSeparationFiveCalc = Math.round(((+sqrSeparationFive.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000,
 
-			sqrSeparationSixCalc = Math.round(((+sqrSeparationSix.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000000) / 10000000000,
-
-			heatMainResidue = Math.round((heatSeparationMain.value - sqrSeparationOneCalc - sqrSeparationTwoCalc - sqrSeparationThreeCalc - sqrSeparationFourCalc - sqrSeparationFiveCalc - sqrSeparationSixCalc) * 10000000000) / 10000000000;
+			sqrSeparationSixCalc = Math.round(((+sqrSeparationSix.value * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000,
 
 			sqrMainResidue = +sqrSeparationMain.value - +sqrSeparationOne.value - +sqrSeparationTwo.value - +sqrSeparationThree.value - +sqrSeparationFour.value - +sqrSeparationFive.value - +sqrSeparationSix.value;
 
-			sqrOutputOne.innerHTML   = sqrSeparationOneCalc;
-			sqrOutputTwo.innerHTML   = sqrSeparationTwoCalc;
-			sqrOutputThree.innerHTML = sqrSeparationThreeCalc;
-			sqrOutputFour.innerHTML  = sqrSeparationFourCalc;
-			sqrOutputFive.innerHTML  = sqrSeparationFiveCalc;
-			sqrOutputSix.innerHTML   = sqrSeparationSixCalc;
+			heatMainResidue = Math.round(((+sqrMainResidue * +heatSeparationMain.value) / +sqrSeparationMain.value) * 10000000) / 10000000;
 
-	if (heatSeparationMain.value == "" || sqrSeparationMain.value == "") {
-		separationMainOutput.innerHTML = ("Данные не введены или введены не корректно.");
+	if (sqrMainResidue == 0) {
+		separationMainOutput.innerHTML = ("Оставшаяся нагрузка: 0;" + " Оставшаяся площадь: " + (sqrMainResidue));
 
-		sqrOutputOne.innerHTML   = ("Нет данных");
-		sqrOutputTwo.innerHTML   = ("Нет данных");
-		sqrOutputThree.innerHTML = ("Нет данных");
-		sqrOutputFour.innerHTML  = ("Нет данных");
-		sqrOutputFive.innerHTML  = ("Нет данных");
-		sqrOutputSix.innerHTML   = ("Нет данных");
+		sqrOutputOne.innerHTML   = sqrSeparationOneCalc;
+		sqrOutputTwo.innerHTML   = sqrSeparationTwoCalc;
+		sqrOutputThree.innerHTML = sqrSeparationThreeCalc;
+		sqrOutputFour.innerHTML  = sqrSeparationFourCalc;
+		sqrOutputFive.innerHTML  = sqrSeparationFiveCalc;
+		sqrOutputSix.innerHTML   = sqrSeparationSixCalc;
 	} else {
 		separationMainOutput.innerHTML = ("Оставшаяся нагрузка: " + (heatMainResidue) + " Оставшаяся площадь: " + (sqrMainResidue));
 
@@ -470,6 +462,18 @@ function heatSeparation() {
 		sqrOutputFive.innerHTML  = sqrSeparationFiveCalc;
 		sqrOutputSix.innerHTML   = sqrSeparationSixCalc;
 	}
+
+	if (heatSeparationMain.value == "" || sqrSeparationMain.value == "") {
+		separationMainOutput.innerHTML = ("Данные не введены или введены не корректно.");
+
+		sqrOutputOne.innerHTML   = ("Нет данных");
+		sqrOutputTwo.innerHTML   = ("Нет данных");
+		sqrOutputThree.innerHTML = ("Нет данных");
+		sqrOutputFour.innerHTML  = ("Нет данных");
+		sqrOutputFive.innerHTML  = ("Нет данных");
+		sqrOutputSix.innerHTML   = ("Нет данных");
+	}
+
 	clearheatSeparation.onclick = function(e) {
 		heatSeparationMain.value = "";
 		sqrSeparationMain.value = "";
@@ -478,6 +482,7 @@ function heatSeparation() {
 		sqrSeparationThree.value = "";
 		sqrSeparationFour.value = "";
 		sqrSeparationFive.value = "";
+		sqrSeparationSix.value = "";
 		sqrOutputOne.innerHTML = "";
 		sqrOutputTwo.innerHTML = "";
 		sqrOutputThree.innerHTML = "";
@@ -486,16 +491,8 @@ function heatSeparation() {
 		sqrOutputSix.innerHTML = "";
 		separationMainOutput.innerHTML = "";
 	};
-
 }
-
 // Разделение тепловой нагрузки
-
-
-
-
-// Разделение тепловой нагрузки
-
 // returnetotop
 window.addEventListener("DOMContentLoaded", function() {
 
